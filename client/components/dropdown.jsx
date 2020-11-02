@@ -18,7 +18,7 @@ class Dropdown extends Component {
   render(){
     // push article components into array
     const articles = [];
-    articles.push(<Article />);
+    articles.push(<Article url="www.google.com" title="Link to Google" />);
 
       return(
           <div>

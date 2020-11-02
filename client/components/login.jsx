@@ -12,6 +12,22 @@ function Login(props) {
     event.preventDefault();  //makes it so the page doesn't reload
     // fetch request here
     // check if status is success
+    // const body = {
+    //   email,
+    //   password
+    // }
+    // fetch('/api/login', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'Application/JSON',
+    //   },
+    //   body: JSON.stringify(body)
+    // })
+    // .then(res => {
+    //   if (res.status === 200) props.handleLogIn();
+    //   // set logged in state to true
+    // })
+    // .catch(err => console.log('error in fetch request', err));
     
     props.handleLogIn();
   }

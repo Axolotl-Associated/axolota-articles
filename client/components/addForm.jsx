@@ -9,7 +9,24 @@ function AddForm(){
   const handleSubmit = (event) => {
     event.preventDefault();  //makes it so the page doesn't reload
     console.log('addForm button clicked');
+    // fetch function goes here
+    // const body = {
+    //   title,
+    //   url,
+    //   description,
+    //   priority
+    // }
+    // fetch('/api/placeholder.placeholder', {
+    //   method: 'POST',
+    //   headers: {
+    //     "Content-Type": "Application/JSON"
+    //   },
+    //   body: JSON.stringify(body)
+    // }).then(function(response) {
+    //   return response.json();
+    // });
   }
+  
   
   return(
     <div className="addForm">
@@ -23,7 +40,7 @@ function AddForm(){
           <option value="medium">Medium</option>
           <option value="low">Low</option>
           </select>
-          <button>ADD THIS SUCKAH!</button>
+          <button>Add</button>
       </form>
     </div>
   )

@@ -13,16 +13,18 @@ function SignUp(props) {
     //   email,
     //   password
     // }
-    // fetch('/signup', {
+    // fetch('/api/signup', {
     //   method: 'POST',
     //   headers: {
     //     'Content-Type': 'Application/JSON',
     //   },
     //   body: JSON.stringify(body)
-    // }).then(res => {
-    //   if (res.status === 200) loggedIn();
-    //   // set is logged in state to true
-    // });
+    // })
+    // .then(res => {
+    //   if (res.status === 200) props.handleLogIn();
+    //   // set logged in state to true
+    // })
+    // .catch(err => console.log('error in fetch request', err));
     props.handleLogIn();
   }
   // return:
@@ -33,7 +35,7 @@ function SignUp(props) {
     <div className="login">
       <form onSubmit={handleSubmit}>
         <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-        <input placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
         <button>Sign Up</button>
       </form>
     </div>

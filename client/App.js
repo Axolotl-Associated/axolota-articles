@@ -10,19 +10,19 @@ class App extends Component {
       isLoggedIn: false,
       isSignedUp: true
     }
-    this.handleLogIn = this.handleLogIn.bind(this);
+    this.handleLogIn = this.handleLogIn.bind(this);  // binding the functionality to the constructor
     this.handleSignUp = this.handleSignUp.bind(this);
   }
 
-  handleLogIn() {
+  handleLogIn() {  
     let { isLoggedIn, isSignedUp } = this.state;
     isSignedUp = true;
-    this.setState({ isLoggedIn: !isLoggedIn, isSignedUp: isSignedUp });
+    this.setState({ isLoggedIn: !isLoggedIn, isSignedUp: isSignedUp }); //setState changes the steate- if isLogged is true, it's changing it to false. And if isSignedUp is true, it's keeping its value as true?
   }
 
   handleSignUp() {
     let { isSignedUp } = this.state;
-    this.setState({isSignedUp: !isSignedUp});
+    this.setState({isSignedUp: !isSignedUp}); //changing the state to true or false depending on the current state
   }
 
   render() {
@@ -30,7 +30,8 @@ class App extends Component {
     if (isSignedUp && !isLoggedIn) {
       return (
         <div>
-          <Login handleLogIn={this.handleLogIn} handleSignUp={this.handleSignUp} />
+          {/* setting both of these as props- so we can call the methods in the children, which changes the state of the parent */}
+          <Login handleLogIn={this.handleLogIn} handleSignUp={this.handleSignUp} />  
         </div>
       )
     } else if (isLoggedIn) {
