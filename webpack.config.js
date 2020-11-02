@@ -12,7 +12,10 @@ module.exports = {
     publicPath: '/build/',
     // tells where back-end server is
     proxy: {
-      '/api': 'http://localhost:3000'
+      '/api': {
+        target: 'http://localhost:3000',
+        pathRewrite: {'^/api' : ''}
+      }
     },
     contentBase: './client'
   },
@@ -43,7 +46,7 @@ module.exports = {
       }
     ]
   },
-  // performance: {
-  //   hints: false
-  // }
+  performance: {
+    hints: false
+  }
 }

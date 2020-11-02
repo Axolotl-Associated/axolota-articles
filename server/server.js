@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const userController = require('./controllers/userController');
 const db = require('./models/linksWalletModel.js');
 const cookieController = require('./controllers/cookieController');
@@ -13,6 +14,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+app.use(cors());
 
 // taking in get request and sending back a response to the client
 app.get('/', (req, res) => {
