@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-// const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const userController = require('./controllers/userController');
 const db = require('./models/linksWalletModel.js');
+const cookieController = require('./controllers/cookieController');
 
 require('dotenv').config();
 
@@ -11,6 +12,7 @@ require('dotenv').config();
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // taking in get request and sending back a response to the client
 app.get('/', (req, res) => {
@@ -18,7 +20,7 @@ app.get('/', (req, res) => {
 })
 
 // create a post route '/signup'
-app.post('/signup', userController.createUser, (req, res) => {
+app.post('/signup', userController.createUser, cookieController.setCookie, (req, res) => {
   // respond with status 200
   res.status(200).send('User created.');
 });

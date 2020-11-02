@@ -8,7 +8,7 @@ userController.createUser = (req, res, next) => {
   INSERT INTO users (email, PASSWORD)
     VALUES ($1, $2)
   RETURNING
-    email
+    user_id
   `;
     console.log("body email: ", req.body.email, "body password:", req.body.password);
   // destructure email and password from req.body
@@ -21,6 +21,8 @@ userController.createUser = (req, res, next) => {
       db.query(newUserQuery, [email, password])
         .then((data) => {
           console.log("Query successful: ", data.rows);
+          res.locals.id = data.rows[0];
+          console.log("Locals ID: ", res.locals.id);
           return next();
         })
         .catch((err) => {
