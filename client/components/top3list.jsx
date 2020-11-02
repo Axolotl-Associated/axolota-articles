@@ -21,7 +21,7 @@ function Top3list(){
   // });
   
   return (
-    <div>
+    <div id="top-list">
       {/* {articles} */}
       <Article url="www.newyorktimes.com" title="New York Times" />
     </div>

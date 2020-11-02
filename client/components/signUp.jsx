@@ -32,11 +32,11 @@ function SignUp(props) {
   // an input for email
   // an input for password
   return (
-    <div className="login">
+    <div id="sign-up">
       <form onSubmit={handleSubmit}>
         <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
-        <button>Sign Up</button>
+        <button id="signup-pg-btn">Sign Up</button>
       </form>
     </div>
   )

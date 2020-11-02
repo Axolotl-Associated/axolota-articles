@@ -30,18 +30,18 @@ function UpdateModal(props) {
 
 
   return (
-  <div>
+  <div className="update-modal">
     <form onSubmit={handleSubmit}>
-      <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-      <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
-      <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-      <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+      <input className="input-update" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+      <input className="input-update" type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
+      <input className="input-update" type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+      <select className="update-priority" value={priority} onChange={(e) => setPriority(e.target.value)}>
           <option>Priority</option>
           <option value="high">High</option>
           <option value="medium">Medium</option>
           <option value="low">Low</option>
         </select>
-      <button>Update</button>
+      <button className="update-modal-btn">Update</button>
     </form>
   </div>
   )

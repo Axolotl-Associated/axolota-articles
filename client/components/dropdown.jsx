@@ -20,13 +20,13 @@ class Dropdown extends Component {
     const articles = [];
     articles.push(<Article url="www.google.com" title="Link to Google" />);
 
-      return(
-          <div>
-              <button onClick={() => this.ToggleButton()}>
+      return (
+        <div className="dropdown">
+            <button className="dropdown-btn" onClick={() => this.ToggleButton()}>
                 {this.props.text}
-              </button>
-              {!this.state.textDisplay && articles}
-          </div>
+            </button>
+            {!this.state.textDisplay && articles}
+        </div>
       )
   }
 }

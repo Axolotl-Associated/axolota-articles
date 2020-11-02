@@ -37,11 +37,11 @@ class Article extends Component {
 // delete button needs a handle click function
   render() {
   return (
-    <div>
+    <div className="article">
       {this.state.openModal ? (<UpdateModal handleUpdateClick={this.handleUpdateClick} />) : null}
       <a href={this.props.url} target="_blank">{this.props.title}</a>
-      <button onClick={this.handleUpdateClick}>Update</button>
-      <button onClick={this.handleDeleteClick}>Delete</button>
+      <button className="update-btn" onClick={this.handleUpdateClick}>Update</button>
+      <button className="delete-btn" onClick={this.handleDeleteClick}>Delete</button>
     </div>
     )
   }

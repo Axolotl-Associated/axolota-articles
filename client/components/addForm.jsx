@@ -29,18 +29,18 @@ function AddForm(){
   
   
   return(
-    <div className="addForm">
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
-        <input type="text" placeholder="url" value={url} onChange={(e) => setUrl(e.target.value)}/>
-        <input type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)}/>
-        <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+    <div id="add-form">
+      <form onSubmit={handleSubmit} >
+        <input className="input-add-form" type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+        <input className="input-add-form" type="text" placeholder="url" value={url} onChange={(e) => setUrl(e.target.value)}/>
+        <input className="input-add-form" type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)}/>
+        <select className="priority" value={priority} onChange={(e) => setPriority(e.target.value)}>
           <option>Priority</option>
           <option value="high">High</option>
           <option value="medium">Medium</option>
           <option value="low">Low</option>
           </select>
-          <button>Add</button>
+          <button id="add-btn">Add</button>
       </form>
     </div>
   )
