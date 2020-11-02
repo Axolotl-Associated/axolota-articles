@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-function Login(){
+function Login(props) {
   // setting state of email and password, and creating the setState functions for each 
   // useState is initializing the state to an empty string
   //useState does two things. It first gives this.state a property of email, with the initial value being an empty string. Then it reassigns the value of this.state.email to be the email that a user passes in.
@@ -10,13 +10,16 @@ function Login(){
 
   const handleSubmit = (event) => {
     event.preventDefault();  //makes it so the page doesn't reload
-    console.log('submit worked');
+    // fetch request here
+    // check if status is success
+    
+    props.handleLogIn();
   }
 
   // return:
-    // a form with 
-      // an input for email
-      // an input for password
+  // a form with 
+  // an input for email
+  // an input for password
   return (
     <div className="login">
       <form onSubmit={handleSubmit}>
@@ -24,9 +27,7 @@ function Login(){
         <input placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
         <button>Log In</button>
       </form>
-      <Link to='/signup'>
-      <button>Sign Up</button>
-      </Link>
+      <button onClick={props.handleSignUp}>Sign Up</button>
     </div>
   )
 

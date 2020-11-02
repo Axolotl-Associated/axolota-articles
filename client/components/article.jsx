@@ -1,11 +1,15 @@
 import React from 'react';
 
-function Article(){
+function Article(props){
   
-
-
+  
+// needs title, url, update button, delete button
   return(
-  <h1>Article here suckah!</h1>
+    <div>
+      <h1>Article here suckah!</h1>
+      <button>Update</button>
+      <button>Delete</button>
+    </div>
   )
 }
 

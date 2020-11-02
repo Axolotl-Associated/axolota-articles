@@ -4,8 +4,8 @@ import Article from './article.jsx';
 class Dropdown extends Component {
   constructor(props){
       super(props);
-      this.state={
-          textDisplay: false,
+      this.state = {
+          textDisplay: true,
       }
   }
 
@@ -23,7 +23,7 @@ class Dropdown extends Component {
       return(
           <div>
               <button onClick={() => this.ToggleButton()}>
-                High Priority List
+                {this.props.text}
               </button>
               {!this.state.textDisplay && articles}
           </div>

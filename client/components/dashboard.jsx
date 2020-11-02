@@ -8,7 +8,7 @@ function Dashboard() {
     <div className="dashboard">
       <AddForm />
       <Top3list />
-      <Dropdown />
+      <Dropdown text="High Priority" />
       {/* <Dropdown title="Medium Priority"/>
       <Dropdown title="Low Priority"/> */}
     </div>
