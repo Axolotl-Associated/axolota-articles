@@ -32,7 +32,7 @@ function AddForm(){
     <div id="add-form">
       <form onSubmit={handleSubmit} >
         <input className="input-add-form" type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
-        <input className="input-add-form" type="text" placeholder="url" value={url} onChange={(e) => setUrl(e.target.value)}/>
+        <input className="input-add-form" type="text" placeholder="URL" value={url} onChange={(e) => setUrl(e.target.value)}/>
         <input className="input-add-form" type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)}/>
         <select className="priority" value={priority} onChange={(e) => setPriority(e.target.value)}>
           <option>Priority</option>
