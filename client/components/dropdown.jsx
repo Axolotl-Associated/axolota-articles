@@ -27,14 +27,16 @@ class Dropdown extends Component {
   render(){
     // push article components into array
     const articles = [];
-    articles.push(<Article url="www.google.com" title="Link to Google" />);
-
+    articles.push(<Article url="http://www.google.com" title="Link to Google" />);
+    articles.push(<Article url="http://newyorktimes.com" title="Link to new york times" />);
       return (
         <div className="dropdown">
             <button className="dropdown-btn" onClick={() => this.ToggleButton()}>
                 {this.props.text}
             </button>
+            <div id="dropdown-articles-container">
             {!this.state.textDisplay && articles}
+            </div>
         </div>
       )
   }
