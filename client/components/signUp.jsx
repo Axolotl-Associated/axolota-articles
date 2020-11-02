@@ -33,6 +33,10 @@ function SignUp(props) {
   // an input for password
   return (
     <div id="sign-up">
+      <div className="img-container">
+          <img src="./images/Axolotl-Wallet.png" width="300px" height="300px"></img>
+        </div>
+      <h1 className="title">Axolota Articles</h1>
       <form onSubmit={handleSubmit}>
         <div><input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></input></div>
         <div><input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input></div>
