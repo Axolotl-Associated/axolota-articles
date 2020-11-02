@@ -1,11 +1,11 @@
 const express = require('express');
-const path = require('path');
+// const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const userController = require('./controllers/userController');
-const db = require('./models/linksWalletModel.js');
 const cookieController = require('./controllers/cookieController');
+const sessionController = require('./controllers/sessionController');
 
 require('dotenv').config();
 
@@ -23,22 +23,35 @@ app.get('/', (req, res) => {
 })
 
 // create a post route '/signup'
-app.post('/signup', userController.createUser, cookieController.setCookie, (req, res) => {
+app.post('/signup', userController.createUser, cookieController.setCookie, sessionController.startSession, (req, res) => {
   // respond with status 200
   res.status(200).send('User created.');
 });
 
+// create a post route '/login'
+app.post('/login', userController.verifyUser, cookieController.setCookie, sessionController.startSession, (req, res) => {
+  res.status(200).send('User logged in.');
+});
 
-const testQuery = 'SELECT * FROM users';
-db.query(testQuery)
-.then((data) => {
-  console.log('query working');
-})
+app.get('/top3list', (req, res) => {
+  console.log("Cookies: ", req.cookies);
+});
+
 
 // bad route error handling
+app.use((req, res) => res.sendStatus(404));
 
 // global error handling
-
+app.use((err, req, res, next) => {
+  const defaultErr = {
+    log: 'Express error handler caught unknown middleware error',
+    status: 400,
+    message: { err: 'An error occurred' },
+  };
+  const errorObj = Object.assign({}, defaultErr, err);
+  console.log(errorObj.log);
+  return res.status(errorObj.status).json(errorObj.message);
+});
 
 // telling server which port to listen on
 // starts the server; binding app to port and listens on port 3000 for connections
