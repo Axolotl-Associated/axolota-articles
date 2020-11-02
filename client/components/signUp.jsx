@@ -9,23 +9,23 @@ function SignUp(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const body = {
-    //   email,
-    //   password
-    // }
-    // fetch('/api/signup', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'Application/JSON',
-    //   },
-    //   body: JSON.stringify(body)
-    // })
-    // .then(res => {
-    //   if (res.status === 200) props.handleLogIn();
-    //   // set logged in state to true
-    // })
-    // .catch(err => console.log('error in fetch request', err));
-    props.handleLogIn();
+    const body = {
+      email,
+      password
+    }
+    fetch('/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'Application/JSON',
+      },
+      body: JSON.stringify(body)
+    })
+    .then(res => {
+      if (res.status === 200) props.handleLogIn();
+      // set logged in state to true
+    })
+    .catch(err => console.log('error in fetch request', err));
+    // props.handleLogIn();
   }
   // return:
   // a form with 
