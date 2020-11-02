@@ -2,17 +2,26 @@ import React, { Component, useState } from 'react';
 import Article from './article.jsx';
 
 class Dropdown extends Component {
-  constructor(props){
+  constructor(props) {
       super(props);
       this.state = {
           textDisplay: true,
+          articles: [],
       }
   }
+  // fetch request grabbing all articles based off priority level
+  
 
   ToggleButton(){
       this.setState((currentState) => ({
           textDisplay: !currentState.textDisplay, 
       }));
+    //   fetch('/api/getArticles')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     setState({articles: data});
+    //     })
+    //     .catch(err => console.log(err));
   }
 
   render(){

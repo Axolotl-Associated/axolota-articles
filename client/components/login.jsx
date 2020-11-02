@@ -39,12 +39,14 @@ function Login(props) {
   return (
     <div id="login">
       <form onSubmit={handleSubmit}>
-        <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-        <input placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+        <div><input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></input></div>
+        <div><input placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input></div>
+        <div id="login-btns">
+        <button id="signup-btn" onClick={props.handleSignUp}>Sign Up</button>
         <button id="login-btn">Log In</button>
+        </div>
       </form>
-      <button id="signup-btn" onClick={props.handleSignUp}>Sign Up</button>
-    </div>
+     </div>
   )
 
 }

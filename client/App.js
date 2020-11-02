@@ -37,7 +37,7 @@ class App extends Component {
     } else if (isLoggedIn) {
       return (
         <div>
-          <Dashboard />
+          <Dashboard handleLogIn={this.handleLogIn}/>
         </div>
       )
     } else {

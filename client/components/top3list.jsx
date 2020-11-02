@@ -23,7 +23,10 @@ function Top3list(){
   return (
     <div id="top-list">
       {/* {articles} */}
+      <div id="top-articles-container">
       <Article url="www.newyorktimes.com" title="New York Times" />
+      <Article url="www.google.com" title="Google" />
+      </div>
     </div>
   )
 }
