@@ -7,6 +7,8 @@ function SignUp(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  //TODO: need to figure out how to get the password out of the form so it doesn't need to be passed into state 
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const body = {

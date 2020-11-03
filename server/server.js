@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
   res.send('hello world');
 })
 
-// need to use a router to organize the following routes
+///TODO: need to use a router to organize the following routes
 
 
 // create a post route '/signup'
@@ -37,6 +37,7 @@ app.post('/login', userController.verifyUser, cookieController.setCookie, sessio
   res.status(200).send('User logged in.');
 });
 
+//TODO: add middleware to delete session when user logs out
 // app.post('/logout', userController.verifyUser, cookieController.setCookie, sessionController.startSession, (req, res) => {
 //   res.status(200).send('User logged in.');
 // });
@@ -44,7 +45,7 @@ app.post('/links', linkController.addLinks, (req, res) => {
   res.status(200).send('Link added to database');
 });
 
-// intended to be authorized routes must verify users
+//TODO: intended to be authorized routes must verify users Need a new middleware to check that cookie id matches session id
 app.get('/links/top3list', linkController.getTop3, (req, res) => {
   console.log("Cookies: ", req.cookies);
   res.status(200).json(res.locals.top3);

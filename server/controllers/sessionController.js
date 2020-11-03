@@ -2,6 +2,10 @@ const db = require('../models/linksWalletModel');
 
 const sessionController = {};
 
+
+//TODO: need functionality to delete cookie at end of session
+
+// inserts cookies into database for active session
 sessionController.startSession = (req, res, next) => {
   const sessionQuery = `INSERT into cookie_sessions (cookie_id)
   VALUES ($1)
