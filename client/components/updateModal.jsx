@@ -11,6 +11,7 @@ function UpdateModal(props) {
   const[description, setDescription] = useState("");
   const[priority, setPriority] = useState("");
 
+  //TODO: need route from the backend to update 
   const handleSubmit = (event) => {
     event.preventDefault();
     // put request function here with new info from form

@@ -11,11 +11,13 @@ class Article extends Component {
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
   }
 
+  //TODO: need to add an update route on the backend
   handleUpdateClick() {
     let { openModal } = this.state;
     this.setState({openModal : !openModal});
   }
 
+  //TODO: need to add a delete route on backend
   handleDeleteClick(event) {
     event.preventDefault();
     // delete request

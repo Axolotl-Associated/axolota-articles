@@ -12,6 +12,10 @@ linkController.addLinks = (req, res, next) => {
   const { title, url, description, priority } = req.body;
   const values = [title, url, description, priority, id];
 
+// need funtionality to delete links and to change priority
+// would also like to create categories e.g. videos, coding articles, news articles
+
+// adds link to database
   db.query(addLinkQuery, values)
     .then((data) => {
       console.log("link was added: ", data.rows[0]);
@@ -22,6 +26,7 @@ linkController.addLinks = (req, res, next) => {
     })
 };
 
+// sends top 3 to fontend for display upon loading dashboard
 linkController.getTop3 = (req, res, next) => {
   const id = req.cookies.ssid;
   const top3LinksQuery = `
@@ -38,6 +43,8 @@ linkController.getTop3 = (req, res, next) => {
     .catch((err) => next({err}));
 };
 
+
+// get links by priority for dropdown menus
 linkController.getLinks = (req, res, next) => {
   const id = req.cookies.ssid;
   const { priority } = req.params;

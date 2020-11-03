@@ -8,6 +8,8 @@ function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
+  //TODO: need to figure out how to get the password out of the form so it doesn't need to be passed into state 
   const handleSubmit = (event) => {
     event.preventDefault();  //makes it so the page doesn't reload
     // fetch request here
@@ -42,6 +44,7 @@ function Login(props) {
           <img src="./images/Axolotl-Wallet.png" width="300px" height="300px"></img>
         </div>
       <h1 className="title">Axolota Articles</h1>
+      <h2 className="tagline">The Official Internet Wallet</h2>
       <form onSubmit={handleSubmit}>
         <div><input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></input></div>
         <div><input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input></div>
