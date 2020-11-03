@@ -44,7 +44,7 @@ function Login(props) {
       <h1 className="title">Axolota Articles</h1>
       <form onSubmit={handleSubmit}>
         <div><input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></input></div>
-        <div><input placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input></div>
+        <div><input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input></div>
         <div id="login-btns">
         <button id="signup-btn" onClick={props.handleSignUp}>Sign Up</button>
         <button id="login-btn">Log In</button>

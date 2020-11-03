@@ -8,23 +8,28 @@ function AddForm(){
   
   const handleSubmit = (event) => {
     event.preventDefault();  //makes it so the page doesn't reload
-    console.log('addForm button clicked');
+    // console.log('addForm button clicked');
     // fetch function goes here
-    // const body = {
-    //   title,
-    //   url,
-    //   description,
-    //   priority
-    // }
-    // fetch('/api/placeholder.placeholder', {
-    //   method: 'POST',
-    //   headers: {
-    //     "Content-Type": "Application/JSON"
-    //   },
-    //   body: JSON.stringify(body)
-    // }).then(function(response) {
-    //   return response.json();
-    // });
+    const body = {
+      title,
+      url,
+      description,
+      priority
+    }
+    fetch('/api/links', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "Application/JSON"
+      },
+      body: JSON.stringify(body)
+    }).then((response) => {
+      return response.json();
+    });
+    // reset inputs
+    setTitle("");
+    setUrl("");
+    setDescription("");
+    setPriority("");
   }
   
   

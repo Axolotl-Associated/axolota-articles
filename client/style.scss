@@ -104,6 +104,7 @@ body {
   input:focus {
     outline: none;
   }
+  
   // signup page button
   #signup-pg-btn {
     display: flex;
@@ -143,6 +144,9 @@ body {
       padding-left: 5px;
       border: transparent;
   }
+  .input-add-form:focus {
+    outline: none;
+  }
   // add form button
   #add-btn {
     width: 50px;
@@ -165,6 +169,9 @@ body {
     margin: 2px;
     padding-left: 5px;
     border: transparent;
+  }
+  select:focus {
+    outline: none;
   }
 
 }
@@ -326,18 +333,18 @@ body {
 }
 
 /* UPDATE MODAL */
-.update-modal {
-  // update inputs
-  .input-update {
+// .update-modal {
+//   // update inputs
+//   .input-update {
 
-  }
-  // priority dropdown in update modal
-  .update-priority {
+//   }
+//   // priority dropdown in update modal
+//   .update-priority {
 
-  }
-  // update button in update modal
-  .update-modal-btn {
+//   }
+//   // update button in update modal
+//   .update-modal-btn {
 
-  }
+//   }
 
-}
+// }

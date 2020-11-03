@@ -8,30 +8,36 @@ class Dropdown extends Component {
           textDisplay: true,
           articles: [],
       }
+      this.ToggleButton = this.ToggleButton.bind(this);
   }
   // fetch request grabbing all articles based off priority level
   
 
-  ToggleButton(){
+  ToggleButton(event) {
+    const priority = event.target.innerHTML.split(" ")[0].toLowerCase();
+    
       this.setState((currentState) => ({
           textDisplay: !currentState.textDisplay, 
       }));
-    //   fetch('/api/getArticles')
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     setState({articles: data});
-    //     })
-    //     .catch(err => console.log(err));
+
+      fetch(`/api/getArticles/${priority}`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({articles: data});
+        })
+        .catch(err => console.log(err));
   }
 
   render(){
     // push article components into array
-    const articles = [];
-    articles.push(<Article url="http://www.google.com" title="Link to Google" />);
-    articles.push(<Article url="http://newyorktimes.com" title="Link to new york times" />);
+    
+    const links = this.state.articles;
+    const articles = links.map(link => {
+      return <Article url={link.url} title={link.title} />
+    });
       return (
         <div className="dropdown">
-            <button className="dropdown-btn" onClick={() => this.ToggleButton()}>
+            <button className="dropdown-btn" onClick={this.ToggleButton}>
                 {this.props.text}
             </button>
             <div id="dropdown-articles-container">
