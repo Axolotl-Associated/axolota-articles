@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Article from './article.jsx';
 
 function Top3list(){
-  // const [top3Articles, setTop3Articles] = useState([]);
+  const [top3Articles, setTop3Articles] = useState([]);
 
   // fetch request that fetches top three articles
-  // fetch('/api/top3list')
+  useEffect(() => {
+    fetch('/api/top3list')
+  });
+  
   //   .then(res => res.json())
   //   .then(data => {
   //     setTop3Articles(data);
