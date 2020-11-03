@@ -16,7 +16,12 @@ function Top3list() {
     
   const articles = top3Articles.map(article => {
       return <Article url={article.url} title={article.title} />;
-  })
+  });
+  if (articles.length < 1) {
+    return (
+      <div></div>
+   )
+  }
   
   return (
     <div id="top-list">

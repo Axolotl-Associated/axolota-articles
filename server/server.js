@@ -23,6 +23,9 @@ app.get('/', (req, res) => {
   res.send('hello world');
 })
 
+// need to use a router to organize the following routes
+
+
 // create a post route '/signup'
 app.post('/signup', userController.createUser, cookieController.setCookie, sessionController.startSession, (req, res) => {
   // respond with status 200
@@ -47,6 +50,7 @@ app.get('/links/top3list', linkController.getTop3, (req, res) => {
   res.status(200).json(res.locals.top3);
 });
 
+// get articles by priority level for dropdown menus
 app.get('/getArticles/:priority', linkController.getLinks, (req, res) => {
   res.status(200).json(res.locals.links);
 });
